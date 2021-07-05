@@ -1,0 +1,13 @@
+
+.card img{
+
+  padding: 10px;
+  height: 240px;
+
+}
+.product .card{
+  text-align: center;
+  /* ya agar alag se css ni likhni toh bootstrap se bhi udhr jaake class likh do 'm-2' tph margin add ho jaaygi */
+
+  margin: 16px;
+}

@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="width: 1300px; margin: 10px auto; background-color: #495057; border-radius: 20px;"
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" style="margin-left: 15px;" href="/products"><i class="fas fa-gifts"></i>&nbsp;&nbsp;Shopping cart</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/products/new" tabindex="-1" aria-disabled="true">New Product</a>
+        </li>
+<% if(!currentUser){ %> 
+  <li class="nav-item">
+    <a class="nav-link active" href="/login" style="left: 670px; position: relative;" tabindex="-1" aria-disabled="true">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="/register" style="left: 680px; position: relative;" tabindex="-1" aria-disabled="true">SignUp</a>
+  </li>
+
+<% } else {%> 
+  <li class="nav-item">
+    <a class="nav-link active" href="#" style="left: 650px; position: relative;" tabindex="-1" aria-disabled="true">Hello <%= currentUser.username %> </a>
+  </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/user/<%= currentUser._id %>/cart " style="left: 650px; position: relative;" tabindex="-1" aria-disabled="true"><i class="fas fa-shopping-cart"></i><sup><span class="badge bg-danger"><%= currentUser.cart.length %> </span></sup></a>
+          
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/logout" style="left: 650px; position: relative;" tabindex="-1" aria-disabled="true">Logout</a>
+        </li>
+        <% } %> 
+      </ul>
+
+    </div>
+  </div>
+</nav>
